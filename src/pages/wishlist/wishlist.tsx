@@ -34,19 +34,23 @@ export default function Wishlist() {
       </PDFDownloadLink>
 
       <div ref={(divRef) => (ref.current = divRef)}>
-        {wishlist.map(
-          ({ date, description, id, title, price, image, location }) => (
-            <Event
-              key={id}
-              id={id}
-              date={date}
-              description={description}
-              image={image}
-              title={title}
-              location={location}
-              price={price}
-            />
+        {wishlist.length ? (
+          wishlist.map(
+            ({ date, description, id, title, price, image, location }) => (
+              <Event
+                key={id}
+                id={id}
+                date={date}
+                description={description}
+                image={image}
+                title={title}
+                location={location}
+                price={price}
+              />
+            )
           )
+        ) : (
+          <h1>There are no events to the wishlist!</h1>
         )}
       </div>
     </div>
