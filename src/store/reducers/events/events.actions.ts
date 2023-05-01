@@ -1,7 +1,8 @@
 import type { CaseReducer, PayloadAction } from "@reduxjs/toolkit";
+
+import generateId from "@utils/generate-id";
 import type EventsInitialState from "./events.types";
 import type { CreateEvent } from "./events.types";
-import generateId from "@utils/generate-id";
 
 export const addToWishlistAction: CaseReducer<
   EventsInitialState,

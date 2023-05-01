@@ -9,6 +9,7 @@ import {
 import Input from "@components/input";
 import Select from "@components/select";
 import { selectCategories } from "@store/reducers/events/events.selectors";
+
 import classes from "./search.module.css";
 
 export default function Search() {

@@ -3,8 +3,8 @@ import { PDFDownloadLink } from "@react-pdf/renderer";
 
 import { useAppSelector } from "@store/hooks";
 import { selectWishlist } from "@store/reducers/events/events.selectors";
-import Event from "@root/features/event";
 import Button from "@components/button";
+import Event from "@features/event";
 import PdfFile from "@features/pdf-file";
 
 export default function Wishlist() {

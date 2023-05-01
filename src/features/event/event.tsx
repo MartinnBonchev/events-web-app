@@ -1,13 +1,14 @@
 import { useLocation } from "react-router-dom";
 
 import Button from "@components/button";
-import classes from "./event.module.css";
 import { useAppDispatch } from "@store/hooks";
 import {
   addToWishlist,
   removeFromWishlist,
 } from "@store/reducers/events/events.slice";
 import type EventProps from "./event.props";
+
+import classes from "./event.module.css";
 
 export default function Event({
   id,

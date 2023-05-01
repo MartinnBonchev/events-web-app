@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+
 import App from "@root/App";
 import Wishlist from "@pages/wishlist/wishlist";
 import CreateEvent from "@pages/create-event";

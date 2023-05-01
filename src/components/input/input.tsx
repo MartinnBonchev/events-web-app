@@ -1,5 +1,4 @@
 import { forwardRef } from "react";
-
 import type { LegacyRef } from "react";
 
 import classes from "./input.module.css";

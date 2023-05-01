@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
-import Event from "@root/features/event";
 import Button from "@components/button";
+import Event from "@features/event";
 import Search from "@features/search";
 import { useAppSelector } from "@store/hooks";
 import {
