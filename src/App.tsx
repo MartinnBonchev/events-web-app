@@ -7,11 +7,13 @@ import { useAppSelector } from "@store/hooks";
 import {
   selectEvents,
   selectFilteredEvents,
+  selectWishlist,
 } from "@store/reducers/events/events.selectors";
 
 function App() {
   const events = useAppSelector(selectEvents);
   const filteredEvents = useAppSelector(selectFilteredEvents);
+  const wishlist = useAppSelector(selectWishlist);
   const navigate = useNavigate();
 
   const handleNavigateWishlist = () => navigate("/wishlist");
@@ -28,7 +30,7 @@ function App() {
 
       <Search />
 
-      {(filteredEvents.length ? filteredEvents : events).map(
+      {(filteredEvents.length && wishlist.length ? filteredEvents : events).map(
         ({ date, description, id, title, price, image, location }) => (
           <Event
             key={id}

@@ -11,7 +11,7 @@ import { selectCategories } from "@store/reducers/events/events.selectors";
 import { createEvent } from "@store/reducers/events/events.slice";
 import type { CreateEvent } from "@store/reducers/events/events.types";
 
-import classes from "./create-event.module.css";
+import classes from "./create-event-form.module.css";
 
 const schema = Joi.object({
   title: Joi.string().trim().required(),

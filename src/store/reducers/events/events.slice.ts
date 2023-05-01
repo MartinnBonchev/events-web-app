@@ -26,16 +26,20 @@ const { reducer, actions } = createSlice({
     removeFromWishlist: removeFromWishlistAction,
     filterEventsTitle: filterEventsByTitleAction,
     filterEventsCategory: filterEventsByCategoryAction,
-    createEvent: createEventAction
+    createEvent: createEventAction,
   },
   extraReducers: (builder) => {
     builder.addCase(fetchEvents.pending, (state) => {
+      state.error = null;
+      state.events = [];
       state.loading = true;
     });
     builder.addCase(fetchEvents.fulfilled, (state, { payload }) => {
+      state.loading = false;
       state.events = payload;
     });
     builder.addCase(fetchEvents.rejected, (state) => {
+      state.loading = false;
       state.error = "Something went wrong!";
     });
   },
@@ -46,7 +50,7 @@ export const {
   removeFromWishlist,
   filterEventsTitle,
   filterEventsCategory,
-  createEvent
+  createEvent,
 } = actions;
 
 export default reducer;

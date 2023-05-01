@@ -26,6 +26,6 @@ export const selectFilteredEvents = createSelector(
   (state) => state.filteredEvents
 );
 
-export const selectCategories = createSelector(selectEvents, (events) =>
-  [... new Set(events.map((event) => event.category))]
-);
+export const selectCategories = createSelector(selectEvents, (events) => [
+  ...new Set(events.map((event) => event.category)),
+]);

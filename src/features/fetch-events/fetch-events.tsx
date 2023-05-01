@@ -1,29 +1,33 @@
-import { useAppDispatch, useAppSelector } from "@store/hooks";
+import { useEffect } from "react";
+import { BeatLoader } from "react-spinners";
 
-import type FetchEventsProps from "./fetch-events.props";
+import { useAppDispatch, useAppSelector } from "@store/hooks";
 import {
-  selectEvents,
   selectEventsError,
   selectEventsLoading,
 } from "@store/reducers/events/events.selectors";
 import { fetchEvents } from "@store/reducers/events/events.thunk";
-import { useEffect } from "react";
+
+import classes from "./fetch-events.module.css";
+
+import type FetchEventsProps from "./fetch-events.props";
 
 export default function FetchEvents({ children }: FetchEventsProps) {
   const dispatch = useAppDispatch();
-  const events = useAppSelector(selectEvents);
 
-  const loading = useAppSelector(selectEventsError);
-  const error = useAppSelector(selectEventsLoading);
+  const loading = useAppSelector(selectEventsLoading);
+  const error = useAppSelector(selectEventsError);
 
   useEffect(() => {
-    if (!events.length) {
-      dispatch(fetchEvents());
-    }
-  }, [dispatch, events]);
+    dispatch(fetchEvents());
+  }, [dispatch]);
 
   if (loading) {
-    return <p>Loading</p>;
+    return (
+      <div className={classes.loader}>
+        <BeatLoader color="#19a7ce" />
+      </div>
+    );
   }
 
   if (error) {
