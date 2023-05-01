@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "@root/App";
-import Wishlist from "@root/pages/wishlist/wishlist";
+import Wishlist from "@pages/wishlist/wishlist";
+import CreateEvent from "@pages/create-event";
 
 const router = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ const router = createBrowserRouter([
   {
     path: "/wishlist",
     element: <Wishlist />,
+  },
+  {
+    path: "/create-event",
+    element: <CreateEvent />,
   },
 ]);
 
