@@ -23,6 +23,7 @@
 
 .event_title {
   max-width: 300px;
+  text-align: start;
   margin: 12px 0;
   font-size: 16px;
 }
