@@ -10,6 +10,8 @@ import {
   selectWishlist,
 } from "@store/reducers/events/events.selectors";
 
+import classes from "./App.module.css";
+
 function App() {
   const events = useAppSelector(selectEvents);
   const filteredEvents = useAppSelector(selectFilteredEvents);
@@ -21,7 +23,7 @@ function App() {
   const handleNavigateCreateEvent = () => navigate("/create-event");
 
   return (
-    <div id="container">
+    <div className={classes.container}>
       <div>
         <Button onClick={handleNavigateWishlist}>Wishlist</Button>
 

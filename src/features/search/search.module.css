@@ -9,3 +9,10 @@
 .search_title {
   text-align: center;
 }
+
+@media (max-width: 680px) {
+  .search_container {
+    flex-direction: column;
+    gap: 0px;
+  }
+}

@@ -21,13 +21,6 @@ a {
   color: #19a7ce;
 }
 
-#container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 @media (min-width: 320px) {
   body {
