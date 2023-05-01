@@ -6,9 +6,10 @@ interface Performers {
   url: string;
   score: number;
   short_name: string;
+  image_attribution: string;
 }
 
-export interface Events {
+export interface EventResponse {
   type: string;
   id: number;
   datetime_utc: string;
@@ -31,8 +32,28 @@ export interface Events {
   description: string;
 }
 
+interface Event {
+  id: number;
+  title: string;
+  price: number;
+  date: string;
+  description: string;
+  category: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+  location: string;
+}
+
+export interface CreateEvent extends Omit<Event, "id" | "image"> {
+  image: string;
+}
+
 export default interface EventsInitialState {
-  events: Partial<Events>[];
+  wishlist: Event[];
+  events: Event[];
+  filteredEvents: Event[];
   loading: boolean;
   error: string | null;
 }
